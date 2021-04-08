@@ -27,30 +27,9 @@ if (!empty($arraUrl[2])) {
 
 }
 
-spl_autoload_register(function ($class) {
-//echo LIBS.'Core/'.$class.".php";
-    if (file_exists(LIBS . 'Core/' . $class . ".php")) {
+ require_once ("Libraries/Core/Autoload.php");
+require_once ("Libraries/Core/Load.php");
 
-        require_once(LIBS . 'Core/' . $class . ".php");
-    }
-
-});
-
-// va en archivo load
-
-$controllerFile = "Controllers/" . $controller . ".php";
-if (file_exists($controllerFile)) {
-
-    require_once ($controllerFile);
-    $controller = new $controller();
-    if (method_exists($controller,$method)){
-        $controller->{$method}($params);
-    }else{
-        echo "No existe el metodo";
-    }
-} else {
-    echo "No existe Controlador";
-}
 /*
 echo "<br>";
 echo "Controlador: " . $controller;
