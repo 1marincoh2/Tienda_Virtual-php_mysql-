@@ -1,7 +1,5 @@
 <?php
-
-require_once("Config/Config.php");
-
+require_once ("Config/Config.php");
 $url = !empty($_GET['url']) ? $_GET['url'] : 'Home/home';
 $arraUrl = explode("/", $url);
 $controller = $arraUrl[0];
