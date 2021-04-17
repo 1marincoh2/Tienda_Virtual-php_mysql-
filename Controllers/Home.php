@@ -28,6 +28,29 @@
          $carrito = $this->model-> getCarrito($params);
          echo $carrito;
      }*/
+  public function insert(){
+
+      $data = $this->model->setUser("jose alberto marin coh",28);
+      print_r($data);
+  }
+
+  public function verusuario($id){
+      $data = $this->model->getUser($id);
+      print_r($data);
+  }
+     public function actualizar(){
+         $data = $this->model->updateUser(2,"alina sayuri marin canul",7)   ;
+         print_r($data);
+     }
+     public function verusuarios($id){
+         $data = $this->model->getUsers($id);
+         print_r($data);
+     }
+     public function eliminarusuario($id){
+         $data = $this->model->delUser($id);
+         print_r($data);
+     }
+
  }
 
 ?>
